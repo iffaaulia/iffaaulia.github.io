@@ -1,159 +1,440 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Portfolio</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <meta name="description" content="Iffaaulia — Junior Data Analyst transitioning from medicine to data analytics.">
+  <title>Iffaaulia — Junior Data Analyst</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f4f4f4;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    header {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-
-    header h1 {
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      color: #ccc;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    section {
-      background: white;
-      margin-bottom: 2rem;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-
-    section h2 {
-      color: #222;
-      border-bottom: 2px solid #0077cc;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    section h3 {
-      color: #0077cc;
-      margin-top: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      color: #666;
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <header>
-    <h1>Your Name</h1>
-    <p>Welcome to my personal portfolio</p>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="#top">IFFAAULIA</a>
+
+      <div class="nav-links">
+        <a href="#work">WORK</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+    </nav>
   </header>
 
-  <main>
+  <main id="top">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">JUNIOR DATA ANALYST</p>
 
-    <!-- Section 1: Personal Information -->
-    <section id="personal-information">
-      <h2>Section 1 - Personal Information</h2>
+          <h1>
+            FROM MEDICINE<br>
+            TO <span>DATA.</span>
+          </h1>
 
-      <h3>Name</h3>
-      <p>Your Full Name</p>
+          <p class="hero-text">
+            A doctor transitioning into data analytics, turning complex
+            information into clear insights.
+          </p>
 
-      <h3>Contact</h3>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>Phone: +44 0000 000000</p>
-      <p>LinkedIn: <a href="#" target="_blank">@your-linkedin</a></p>
-      <p>GitHub: <a href="#" target="_blank">@your-github</a></p>
-      <p>Instagram: <a href="#" target="_blank">@your-instagram</a></p>
+          <a class="button button-primary" href="#work">
+            VIEW MY WORK <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="data-orbit orbit-one"></div>
+          <div class="data-orbit orbit-two"></div>
+          <div class="data-orbit orbit-three"></div>
+
+          <div class="data-node node-a"></div>
+          <div class="data-node node-b"></div>
+          <div class="data-node node-c"></div>
+          <div class="data-node node-d"></div>
+
+          <div class="data-line line-a"></div>
+          <div class="data-line line-b"></div>
+          <div class="data-line line-c"></div>
+
+          <span class="data-label label-a">01</span>
+          <span class="data-label label-b">SQL</span>
+          <span class="data-label label-c">INSIGHT</span>
+        </div>
+      </div>
     </section>
 
-    <!-- Section 2: Bio -->
-    <section id="bio">
-      <h2>Section 2 - Bio</h2>
+    <section id="about" class="section section-border">
+      <div class="container two-column">
+        <div>
+          <p class="section-number">01 / ABOUT</p>
+          <h2>FROM CLINICAL<br><span>THINKING TO DATA.</span></h2>
+        </div>
 
-      <h3>About Me</h3>
-      <p>
-        Write a short introduction about yourself, your interests,
-        your background, and what you are passionate about.
-      </p>
+        <div class="section-copy">
+          <p>
+            My career started in medicine, where critical thinking,
+            evidence-based reasoning and problem solving were part of
+            everyday work.
+          </p>
 
-      <h3>Experience</h3>
-      <p>
-        Describe your professional, academic, freelance, or personal
-        experience here.
-      </p>
+          <p>
+            Over time, I discovered that I was equally drawn to data —
+            understanding numbers, finding patterns and turning complex
+            information into something clear and useful.
+          </p>
 
-      <h3>Skills &amp; Preferred Tools</h3>
-      <ul>
-        <li>HTML &amp; CSS</li>
-        <li>JavaScript</li>
-        <li>Git &amp; GitHub</li>
-        <li>Visual Studio Code</li>
-        <li>Other relevant skills and tools</li>
-      </ul>
+          <p>
+            I'm now transitioning into data analytics, combining the
+            problem-solving mindset I developed through medicine with
+            technical skills in SQL, Python, Excel, Power BI and data
+            visualisation.
+          </p>
+
+          <p>
+            I enjoy making complex information easier to understand and
+            using data to support better decisions.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Section 3: Projects -->
-    <section id="projects">
-      <h2>Section 3 - Projects</h2>
+    <section id="journey" class="section section-border">
+      <div class="container">
+        <div class="section-intro">
+          <p class="section-number">02 / MY JOURNEY</p>
+          <h2>FROM MEDICINE<br>TO <span>DATA ANALYTICS.</span></h2>
+        </div>
 
-      <h3>Project 1 - Project Name</h3>
-      <p><strong>Description:</strong> Briefly describe your project.</p>
-      <p><strong>Challenges:</strong> Explain the main challenges you faced.</p>
-      <p><strong>Process:</strong> Describe how you planned, developed, and completed the project.</p>
-      <p><strong>Tools Used:</strong> HTML, CSS, JavaScript, etc.</p>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-index">01</div>
+            <div>
+              <p class="timeline-label">MEDICINE</p>
+              <p class="timeline-text">
+                My career began in medicine, where I developed a strong
+                foundation in critical thinking, evidence-based reasoning
+                and problem solving.
+              </p>
+            </div>
+          </article>
 
-      <h3>Project 2 - Project Name</h3>
-      <p><strong>Description:</strong> Briefly describe your project.</p>
-      <p><strong>Challenges:</strong> Explain the main challenges you faced.</p>
-      <p><strong>Process:</strong> Describe how you planned, developed, and completed the project.</p>
-      <p><strong>Tools Used:</strong> List the tools used.</p>
+          <article class="timeline-item">
+            <div class="timeline-index">02</div>
+            <div>
+              <p class="timeline-label">CAREER TRANSITION</p>
+              <p class="timeline-text">
+                Over time, I became increasingly interested in data and how
+                numbers, patterns and evidence can help make complex
+                information easier to understand.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-index">03</div>
+            <div>
+              <p class="timeline-label">DATA ANALYTICS BOOTCAMP</p>
+              <p class="timeline-text">
+                I joined the Generation UK &amp; I Data Analytics Bootcamp,
+                building practical skills across SQL, Excel, Python, Power BI,
+                data visualisation and project management.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-index">04</div>
+            <div>
+              <p class="timeline-label">FIRST PROJECT</p>
+              <p class="timeline-text">
+                I applied these skills to my first individual project,
+                analysing medical appointment no-shows using SQL, MySQL
+                and Power BI.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-index">05</div>
+            <div>
+              <p class="timeline-label">CERTIFICATION</p>
+              <p class="timeline-text">
+                Microsoft Power Platform Fundamentals (PL-900)<br>
+                <strong>25 September 2026</strong>
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item timeline-final">
+            <div class="timeline-index">06</div>
+            <div>
+              <p class="timeline-label">NEXT CHAPTER</p>
+              <p class="timeline-text">
+                Now building toward my career as a
+                <strong>Junior Data Analyst</strong> — continuing to learn,
+                create and turn data into useful insights.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
+    <section id="work" class="section section-border">
+      <div class="container">
+        <div class="section-intro work-heading">
+          <p class="section-number">03 / SELECTED WORK</p>
+          <p class="project-index">PROJECT 01</p>
+          <h2>MEDICAL APPOINTMENT<br><span>NO-SHOW ANALYSIS.</span></h2>
+          <p class="project-question">
+            Why do patients miss<br class="desktop-only"> their medical appointments?
+          </p>
+          <p class="project-tools">SQL · MYSQL · POWER BI · DAX</p>
+        </div>
+
+        <div class="project-visual">
+          <div class="dashboard-placeholder">
+            <div class="placeholder-top">
+              <span>POWER BI DASHBOARD</span>
+              <span>PROJECT 01</span>
+            </div>
+
+            <div class="placeholder-grid">
+              <div class="placeholder-chart chart-large">
+                <span>APPOINTMENT ATTENDANCE</span>
+                <div class="fake-bars">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+
+              <div class="placeholder-chart chart-stat">
+                <span>NO-SHOW RATE</span>
+                <strong>20.19%</strong>
+              </div>
+
+              <div class="placeholder-chart chart-small">
+                <span>KEY PATTERNS</span>
+                <div class="fake-line"></div>
+              </div>
+
+              <div class="placeholder-chart chart-small">
+                <span>APPOINTMENTS</span>
+                <div class="fake-dots">
+                  <i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+            </div>
+
+            <p class="placeholder-note">
+              Replace this area with your Power BI dashboard screenshot.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-summary">
+          <div class="project-stat">
+            <span>OVERALL NO-SHOW RATE</span>
+            <strong>20.19%</strong>
+          </div>
+
+          <div class="project-description">
+            <p>
+              Explored patterns in appointment attendance using patient and
+              appointment data.
+            </p>
+
+            <a
+              class="text-link"
+              href="https://github.com/iffaaulia/medical-appointment-no-show-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              VIEW CASE STUDY <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-note">
+          <p class="muted">
+            More projects coming soon. Streamflix Subscription Strategy will
+            be added once the project materials are ready to share.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="strengths" class="section section-border">
+      <div class="container">
+        <div class="section-intro">
+          <p class="section-number">04 / WHAT I BRING</p>
+          <h2>SKILLS FROM<br><span>EXPERIENCE.</span></h2>
+        </div>
+
+        <div class="strengths-grid">
+          <article class="strength">
+            <span class="strength-number">01</span>
+            <h3>CRITICAL THINKING</h3>
+            <p>
+              Breaking complex problems into manageable questions and looking
+              for the evidence behind them.
+            </p>
+          </article>
+
+          <article class="strength">
+            <span class="strength-number">02</span>
+            <h3>EVIDENCE-BASED<br>DECISION MAKING</h3>
+            <p>
+              Approaching decisions by examining information, questioning
+              assumptions and looking for supporting evidence.
+            </p>
+          </article>
+
+          <article class="strength">
+            <span class="strength-number">03</span>
+            <h3>PROBLEM SOLVING</h3>
+            <p>
+              Working through unfamiliar problems, identifying what matters
+              and finding practical ways forward.
+            </p>
+          </article>
+
+          <article class="strength">
+            <span class="strength-number">04</span>
+            <h3>PERSISTENCE<br>&amp; GROWTH MINDSET</h3>
+            <p>
+              Staying committed when things are difficult and continuing to
+              learn through challenges.
+            </p>
+          </article>
+
+          <article class="strength">
+            <span class="strength-number">05</span>
+            <h3>WORKING UNDER PRESSURE</h3>
+            <p>
+              Managing multiple priorities while staying focused, structured
+              and detail-oriented.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-border">
+      <div class="container two-column">
+        <div>
+          <p class="section-number">05 / TOOLS &amp; SKILLS</p>
+          <h2>TOOLS I USE<br><span>TO WORK WITH DATA.</span></h2>
+        </div>
+
+        <div class="skills-content">
+          <div class="skill-group">
+            <p class="skill-group-title">TECHNICAL</p>
+            <p class="skill-list">
+              SQL · MySQL · Excel · Power BI · Python · Power Query · DAX ·
+              Jupyter Notebook · Data Visualisation
+            </p>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-title">ANALYTICS</p>
+            <p class="skill-list">
+              Data Cleaning · Exploratory Data Analysis · Data Analysis ·
+              Dashboard Development · Data Visualisation · Evidence-Based Analysis
+            </p>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-title">WAYS OF WORKING</p>
+            <p class="skill-list">
+              Agile · Scrum · Project Management · Stakeholder Collaboration ·
+              Problem Solving
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certification" class="section section-border">
+      <div class="container certification">
+        <div>
+          <p class="section-number">06 / CERTIFICATION</p>
+          <p class="certification-brand">MICROSOFT</p>
+          <h2>POWER PLATFORM<br><span>FUNDAMENTALS.</span></h2>
+        </div>
+
+        <div class="certification-details">
+          <p class="cert-code">PL-900</p>
+          <p class="cert-status">CERTIFIED</p>
+          <p class="cert-date">25 SEPTEMBER 2026</p>
+          <p class="cert-description">
+            A foundation in Microsoft Power Platform, covering the
+            capabilities of Power Apps, Power Automate, Power BI and related
+            business solutions.
+          </p>
+          <p class="muted small">
+            Credential link can be added here once available.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container contact">
+        <div>
+          <p class="section-number">07 / CONTACT</p>
+          <h2>LET'S<br><span>CONNECT.</span></h2>
+        </div>
+
+        <div class="contact-content">
+          <p class="contact-intro">
+            I'm currently open to Junior Data Analyst opportunities and
+            conversations about data, analytics and new opportunities.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <span>EMAIL</span>
+              <p>YOUR EMAIL HERE</p>
+            </div>
+
+            <div class="contact-item">
+              <span>LINKEDIN</span>
+              <p>YOUR LINKEDIN HERE</p>
+            </div>
+
+            <div class="contact-item">
+              <span>GITHUB</span>
+              <a
+                href="https://github.com/iffaaulia"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github.com/iffaaulia
+              </a>
+            </div>
+          </div>
+
+          <a class="button button-primary" href="https://github.com/iffaaulia">
+            VIEW GITHUB <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Your Name. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 IFFAAULIA</p>
+      <p>JUNIOR DATA ANALYST</p>
+      <p>CAREER TRANSITIONING INTO DATA</p>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
