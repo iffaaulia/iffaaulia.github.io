@@ -1,0 +1,9 @@
+chart,group,percentage,precision,source
+attendance,Attended,79.81,Attended calculated as 100 minus published no-show rate,Published dashboard_preview.png in project repository
+attendance,Missed,20.19,Attended calculated as 100 minus published no-show rate,Published dashboard_preview.png in project repository
+lead-time,Same day,5,Approximate: rounded dashboard labels,Published dashboard_preview.png in project repository
+lead-time,1–3 days,23,Approximate: rounded dashboard labels,Published dashboard_preview.png in project repository
+lead-time,4–7 days,25,Approximate: rounded dashboard labels,Published dashboard_preview.png in project repository
+lead-time,8+ days,32,Approximate: rounded dashboard labels,Published dashboard_preview.png in project repository
+sms,Received SMS,28,Approximate reading of dashboard bar heights,Published dashboard_preview.png in project repository
+sms,No SMS,17,Approximate reading of dashboard bar heights,Published dashboard_preview.png in project repository
