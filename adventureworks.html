@@ -1,104 +1,1171 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Revenue grew while orders fell. A Power BI learning project exploring product mix, returns, geography, and customers in AdventureWorks.">
-<title>When More Revenue Isn't the Whole Story | Iffa Aulia Hakim</title>
-<style>
-:root{--ink:#282735;--muted:#646371;--accent:#6455a4;--line:#e8e5ef;--paper:#faf9fd}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.8 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--accent);outline-offset:5px}a:hover{color:var(--accent)}.wrap{max-width:1080px;margin:auto;padding:0 32px}.nav{display:flex;justify-content:space-between;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}.brand{font-weight:650}.links{display:flex;gap:22px;font-size:14px;color:var(--muted)}main{padding-bottom:70px}.back{display:inline-block;margin-top:30px;font-size:14px;color:var(--accent)}.hero{max-width:850px;margin:50px auto 35px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:11px;color:var(--accent);font-weight:650}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(37px,6.3vw,64px);font-weight:500;letter-spacing:-.045em;line-height:1.12;margin-bottom:25px}h2{font-size:clamp(27px,4vw,37px);line-height:1.25;font-weight:500;letter-spacing:-.025em}h3{font-size:21px;font-weight:600;line-height:1.4}.lede{font-size:21px;line-height:1.6;color:var(--muted)}.muted,figcaption,.small{color:var(--muted)}.small,figcaption{font-size:13px;line-height:1.65}.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:23px 0;margin:25px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px}.meta strong{display:block;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.1em}.button{display:inline-block;border:1px solid var(--accent);padding:10px 20px;border-radius:28px;background:var(--accent);color:white;font-size:14px;margin:6px 12px 0 0}.button:hover{background:#514385;color:white}.secondary{color:var(--accent);background:transparent}.secondary:hover{background:#f0edf8;color:var(--accent)}figure{margin:30px 0}figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px;background:white}figcaption{margin-top:10px}figcaption strong{display:block;color:var(--ink)}.story{max-width:790px;margin:auto}.toc{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin:40px 0;font-size:13px}.toc div{display:flex;flex-wrap:wrap;gap:10px 20px}.toc a{color:var(--accent)}section.chapter{border-top:1px solid var(--line);margin-top:46px;padding-top:35px;scroll-margin-top:24px}.takeaway{border-left:3px solid var(--accent);background:#f0edf8;padding:20px 24px;border-radius:0 10px 10px 0;margin:25px 0}.takeaway p:last-child{margin-bottom:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;padding:22px 0}.stats strong{display:block;color:var(--accent);font-size:30px;font-weight:500;line-height:1.4}.stats span{font-size:12px;color:var(--muted)}.table-scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:22px 0}th,td{padding:13px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#f0edf8;font-weight:600}td:first-child{font-weight:550}li{margin-bottom:10px}ol{padding-left:25px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}.tags span{background:#f0edf8;color:#564880;font-size:12px;padding:4px 12px;border-radius:20px}.footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding:25px 0}.skip{position:absolute;left:-9999px}.skip:focus{left:20px;top:10px;background:white;padding:10px;z-index:2}video{width:100%;border-radius:12px;background:#222}details{padding:18px 0;border-top:1px solid var(--line)}summary{cursor:pointer;color:var(--accent);font-weight:600}@media(max-width:650px){.wrap{padding:0 20px}.nav{font-size:13px}.links{font-size:12px;gap:12px}.hero{margin-top:35px}.lede{font-size:18px}.meta,.stats{grid-template-columns:1fr;gap:15px}.stats{grid-template-columns:repeat(2,1fr)}body{font-size:16px}section.chapter{margin-top:35px;padding-top:28px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta
+    name="description"
+    content="Revenue grew while orders fell. A Power BI learning project exploring product mix, returns, geography, and customers in AdventureWorks."
+  >
+
+  <title>When More Revenue Isn't the Whole Story | Iffa Aulia Hakim</title>
+
+  <style>
+    :root {
+      --ink: #282735;
+      --muted: #646371;
+      --accent: #6455a4;
+      --line: #e8e5ef;
+      --paper: #faf9fd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 17px/1.8 system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    a:focus-visible,
+    video:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: auto;
+      padding: 0 32px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-weight: 650;
+    }
+
+    .links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    main {
+      padding-bottom: 70px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 30px;
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    .hero {
+      max-width: 850px;
+      margin: 50px auto 35px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(37px, 6.3vw, 64px);
+      font-weight: 500;
+      letter-spacing: -.045em;
+      line-height: 1.12;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-size: clamp(27px, 4vw, 37px);
+      line-height: 1.25;
+      font-weight: 500;
+      letter-spacing: -.025em;
+    }
+
+    h3 {
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .lede {
+      font-size: 21px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .muted,
+    figcaption,
+    .small {
+      color: var(--muted);
+    }
+
+    .small,
+    figcaption {
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 23px 0;
+      margin: 25px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .meta strong {
+      display: block;
+      font-size: 11px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .button {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      padding: 10px 20px;
+      border-radius: 28px;
+      background: var(--accent);
+      color: white;
+      font-size: 14px;
+      margin: 6px 12px 0 0;
+    }
+
+    .button:hover {
+      background: #514385;
+      color: white;
+    }
+
+    .secondary {
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .secondary:hover {
+      background: #f0edf8;
+      color: var(--accent);
+    }
+
+    figure {
+      margin: 30px 0;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+    }
+
+    figcaption {
+      margin-top: 10px;
+    }
+
+    figcaption strong {
+      display: block;
+      color: var(--ink);
+    }
+
+    .story {
+      max-width: 790px;
+      margin: auto;
+    }
+
+    .toc {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0;
+      margin: 40px 0;
+      font-size: 13px;
+    }
+
+    .toc div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+    }
+
+    .toc a {
+      color: var(--accent);
+    }
+
+    section.chapter {
+      border-top: 1px solid var(--line);
+      margin-top: 46px;
+      padding-top: 35px;
+      scroll-margin-top: 24px;
+    }
+
+    .takeaway {
+      border-left: 3px solid var(--accent);
+      background: #f0edf8;
+      padding: 20px 24px;
+      border-radius: 0 10px 10px 0;
+      margin: 25px 0;
+    }
+
+    .takeaway p:last-child {
+      margin-bottom: 0;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 22px 0;
+    }
+
+    .stats strong {
+      display: block;
+      color: var(--accent);
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .stats span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 14px;
+      margin: 22px 0;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: #f0edf8;
+      font-weight: 600;
+    }
+
+    td:first-child {
+      font-weight: 550;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    ol {
+      padding-left: 25px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 24px 0;
+    }
+
+    .tags span {
+      background: #f0edf8;
+      color: #564880;
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .footer {
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding: 25px 0;
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .skip:focus {
+      left: 20px;
+      top: 10px;
+      background: white;
+      padding: 10px;
+      z-index: 2;
+    }
+
+    .video-frame {
+      margin: 24px 0 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #222;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #222;
+    }
+
+    .video-help a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .video-error {
+      padding: 16px 20px;
+      background: #f0edf8;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    details {
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @media (max-width: 650px) {
+      .wrap {
+        padding: 0 20px;
+      }
+
+      .nav {
+        font-size: 13px;
+      }
+
+      .links {
+        font-size: 12px;
+        gap: 12px;
+      }
+
+      .hero {
+        margin-top: 35px;
+      }
+
+      .lede {
+        font-size: 18px;
+      }
+
+      .meta {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      body {
+        font-size: 16px;
+      }
+
+      section.chapter {
+        margin-top: 35px;
+        padding-top: 28px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip" href="#story">Skip to the story</a>
-<header class="wrap"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html">Iffa Aulia Hakim</a><div class="links"><a href="index.html#projects">All projects</a><a href="https://github.com/iffaaulia/adventureworks-powerbi-analysis">GitHub ↗</a></div></nav></header>
-<main class="wrap" id="story">
-<a class="back" href="index.html#projects">← Back to portfolio</a>
-<header class="hero"><p class="eyebrow">Business performance / Project 02</p>
-<h1>When more revenue isn't the whole story.</h1>
-<p class="lede">Revenue rose. Orders fell. I used Power BI to explore what sat behind the headline, then looked at products, returns, markets, and customers to identify the next questions a business could investigate.</p>
-<div class="meta"><div><strong>Role</strong>Data preparation, modelling &amp; analysis</div><div><strong>Data</strong>56,046 sales records · Jan 2020–Jun 2022</div><div><strong>Tools</strong>Power Query · Power BI · DAX</div></div>
-<p class="small">A guided Maven Analytics course project and my second business analysis portfolio entry. Recommendations are proposals; no business change or financial impact was measured.</p>
-<a class="button" href="#revenue">Explore the findings ↓</a><a class="button secondary" href="https://github.com/iffaaulia/adventureworks-powerbi-analysis">Project on GitHub ↗</a>
-</header>
-<figure><a href="images/adventureworks/exec-dashboard.png" target="_blank" rel="noopener"><img src="images/adventureworks/exec-dashboard.png" alt="AdventureWorks executive dashboard with revenue, profit, orders, return rate, category orders and product metrics" width="1173" height="661"></a><figcaption><strong>A business summary is a starting point, not the explanation.</strong>Original report screenshot. The visible revenue tooltip is part of the captured report state. Click any dashboard image to view it full size.</figcaption></figure>
-<div class="story">
-<nav class="toc" aria-label="Inside this story"><p class="eyebrow">Inside this story</p><div><a href="#questions">01 / Questions</a><a href="#revenue">02 / Revenue</a><a href="#mix">03 / Product mix</a><a href="#returns">04 / Returns</a><a href="#markets">05 / Markets</a><a href="#customers">06 / Customers</a><a href="#product">07 / Product exploration</a><a href="#recommendations">08 / Recommendations</a><a href="#learning">09 / Learning</a><a href="#limits">10 / Sources</a></div></nav>
-<section class="chapter" id="questions"><p class="eyebrow">01 / Business questions</p><h2>From healthcare patterns to business performance.</h2>
-<p>My first portfolio project explored missed medical appointments. For this second project, I wanted to build my Power BI skills while learning how to interpret commercial data: not just whether a number increased, but what else I needed to know before recommending an action.</p>
-<p>I started with ten core CSVs, combined three years of sales, and prepared lookup and returns data in Power Query. I then connected two fact tables with six dimensions and built an interactive report with executive, map, product, and customer pages.</p>
-<ul><li>Was revenue growth accompanied by more orders?</li><li>Did the most frequently purchased category also drive revenue?</li><li>Which products deserved a closer look at returns?</li><li>Did countries with more orders also generate more value?</li><li>What could customer and product views tell me—and what could they not establish?</li></ul>
-<div class="stats"><div><strong>$24.91M</strong><span>Revenue</span></div><div><strong>$10.46M</strong><span>Product profit</span></div><div><strong>25,164</strong><span>Distinct orders</span></div><div><strong>17,416</strong><span>Purchasing customers</span></div><div><strong>2.17%</strong><span>Unit return ratio</span></div><div><strong>56,046</strong><span>Sales line records</span></div></div>
-<p class="small">Source-data totals for the supplied dataset. Product profit is revenue less product cost, not net income. The unit return ratio is aggregate returned units divided by sold units.</p>
-</section>
-<section class="chapter" id="revenue"><p class="eyebrow">02 / Revenue and order volume</p><h2>More revenue did not mean more orders.</h2>
-<p>In June 2022, revenue reached <strong>$1.827M</strong>, up <strong>3.31%</strong> from May. Yet distinct orders fell from <strong>2,165 to 2,146</strong>, a decline of <strong>0.88%</strong>.</p>
-<p>Looking at those metrics together led me to revenue per order. It increased from <strong>$816.83 to $851.35 (+4.23%)</strong>. The headline growth was accompanied by higher average order value, rather than higher order volume.</p>
-<div class="takeaway"><strong>The next business question</strong><p>Was the increase associated with a shift towards more expensive products, more units per basket, or another change? I would break the difference down by product and quantity before recommending a pricing or acquisition action.</p></div>
-<p class="small">June versus May 2022. Figures calculated from the supplied sales quantities and product lookup prices. They show an observed pattern, not its cause.</p>
-</section>
-<section class="chapter" id="mix"><p class="eyebrow">03 / Product contribution</p><h2>The busiest category was not the revenue engine.</h2>
-<p>Accessories appeared in <strong>16,983 orders</strong>, more than Bikes at <strong>13,929</strong>. If I looked only at order counts, Accessories would appear to lead. But Bikes generated <strong>$23.64M—94.89% of revenue</strong>.</p>
-<p>This changed how I read the category chart. Order popularity and revenue contribution answer different questions. The business was highly dependent on Bikes for revenue, while Accessories appeared in many baskets.</p>
-<div class="takeaway"><strong>Recommendation to investigate</strong><p>Monitor Bikes performance and availability closely. Explore relevant accessory bundles with bike purchases, measuring attachment rate and incremental profit rather than assuming that more bundled items will improve results.</p></div>
-<p class="small">Full sales period. Category counts overlap because a single order can contain products from several categories; they should not be summed as unique total orders.</p>
-</section>
-<section class="chapter" id="returns"><p class="eyebrow">04 / Product returns</p><h2>A higher return ratio is a signal to investigate.</h2>
-<p>The overall unit return ratio was <strong>2.17%</strong>. Two visible products stood above it: <strong>Sport-100 Helmet, Red at 3.33%</strong> and <strong>Blue at 3.31%</strong>.</p>
-<div class="table-scroll"><table><caption class="small">Returned units compared with sold units across the supplied data.</caption><thead><tr><th scope="col">Product</th><th scope="col">Units sold</th><th scope="col">Units returned</th><th scope="col">Ratio</th></tr></thead><tbody><tr><td>Sport-100 Helmet, Red</td><td>2,099</td><td>70</td><td>3.33%</td></tr><tr><td>Sport-100 Helmet, Blue</td><td>1,995</td><td>66</td><td>3.31%</td></tr></tbody></table></div>
-<p>I would prioritise a review of their patterns by period and territory, then seek return reasons or quality records. The current dataset cannot tell me whether fit, product condition, customer expectations, or another factor explains the difference.</p>
-<div class="takeaway"><strong>Keep the metric definition visible</strong><p>The report's <code>Return Rate</code> divides returned units by sold units. <code>Total Returns</code> counts return records. These are different measures, and mixing them would change the interpretation.</p></div>
-<p class="small">Returns are not linked to original orders or purchase cohorts. These aggregate ratios are not an individual customer's probability of returning an item.</p>
-</section>
-</div>
-<figure><a href="images/adventureworks/map.png" target="_blank" rel="noopener"><img src="images/adventureworks/map.png" alt="AdventureWorks map showing order distribution across countries with a continent selector" loading="lazy"></a><figcaption><strong>Where orders happen—and what order volume leaves out.</strong>The original geographic report encodes total orders, not revenue or profitability.</figcaption></figure>
-<div class="story"><section class="chapter" id="markets"><p class="eyebrow">05 / Geographic performance</p><h2>Fewer orders could still contribute similar revenue.</h2>
-<p>The United States led with <strong>8,700 orders</strong> and approximately <strong>$7.94M revenue</strong>. Australia recorded <strong>6,060 orders</strong> yet generated approximately <strong>$7.42M</strong>.</p>
-<p>Australia therefore contributed similar revenue with fewer orders across the full dataset. The map alone would not show that difference in order value.</p>
-<div class="takeaway"><strong>Recommendation to investigate</strong><p>Compare revenue per order, product mix, and product profit alongside geographic volume before allocating market budgets. These data do not establish acquisition costs, market potential, or the returns on additional marketing spend.</p></div>
-</section></div>
-<figure><a href="images/adventureworks/customer-detail.png" target="_blank" rel="noopener"><img src="images/adventureworks/customer-detail.png" alt="Customer detail dashboard showing purchasing customers, revenue per customer, segment order charts and top customers" loading="lazy"></a><figcaption><strong>Customer contribution deserves its own view.</strong>The income and occupation charts count orders grouped by customer attributes; they do not show segment profitability.</figcaption></figure>
-<div class="story"><section class="chapter" id="customers"><p class="eyebrow">06 / Customer contribution</p><h2>A top-customer list starts a question, not a campaign.</h2>
-<p>The data contains <strong>17,416 purchasing customers</strong>, with approximately <strong>$1.43K revenue per customer</strong>. The report's highest-revenue listed customer contributed <strong>$12,408 across six orders</strong>.</p>
-<p>This view helped me move from total sales to customer contribution. However, a ranking alone does not tell me who is likely to return, whether a customer is profitable, or whether a retention offer would change behaviour.</p>
-<div class="takeaway"><strong>Recommendation to investigate</strong><p>Examine repeat-purchase behaviour, recency, and revenue concentration before designing a retention programme. Use income and occupation as descriptive context rather than evidence that a particular group should receive an offer.</p></div>
-<p class="small">Customer-level return attribution is not available: Returns Data has no CustomerKey or original order identifier.</p>
-</section></div>
-<figure><a href="images/adventureworks/product-detail.png" target="_blank" rel="noopener"><img src="images/adventureworks/product-detail.png" alt="Product detail dashboard with three target gauges, price adjustment slider, profit comparison and selectable product metric" loading="lazy"></a><figcaption><strong>One page, several ways to investigate a product.</strong>Original report state for a selected product. Target gauges and a price scenario support exploration; they are not evidence of a tested pricing decision.</figcaption></figure>
-<div class="story"><section class="chapter" id="product"><p class="eyebrow">07 / Interactive product exploration</p><h2>Less visual clutter. More useful questions.</h2>
-<p>I learned to use <strong>gauge charts</strong> to compare monthly orders, revenue, and profit with targets. In this project, targets are set at 110% of previous-month performance. They provide a consistent benchmark, rather than a target agreed with a real stakeholder.</p>
-<p>A <strong>field parameter</strong> lets the bottom chart switch between orders, revenue, profit, returns, and return rate. Instead of adding five separate charts, I gave the user a way to choose the question.</p>
-<p>A <strong>numeric range parameter</strong> supplies a price-adjustment input for comparing baseline and adjusted profit. This is a calculation scenario: it retains observed quantities and existing costs. A higher scenario profit does not demonstrate that customers would continue buying at the new price.</p>
-<p>Navigation, contextual tooltips, and customer metric selection helped me practise making a report easier to explore. These are report-design features; they do not replace the evidence needed for a business decision.</p>
-html
-<section class="chapter" id="walkthrough-video" aria-labelledby="video-title">
-  <p class="eyebrow">Dashboard walkthrough</p>
-  <h2 id="video-title">See the report in action.</h2>
-  <video controls playsinline preload="metadata"
-         poster="images/adventureworks/exec-dashboard.png">
-    <source src="videos/adventureworks-walkthrough.mp4" type="video/mp4">
-    Your browser does not support embedded video.
-    <a href="videos/adventureworks-walkthrough.mp4">Download the walkthrough.</a>
-  </video>
-  <p class="small">A recorded demonstration of report navigation, filters,
-     metric switching, and price-scenario exploration.</p>
-  <p><a href="videos/adventureworks-walkthrough.mp4">Open the MP4 directly ↗</a></p>
-</section>
-</section>
-<section class="chapter" id="recommendations"><p class="eyebrow">08 / Recommendations</p><h2>Turn a pattern into a measurable next step.</h2>
-<ol><li><strong>Explain the change in order value.</strong> Decompose the May-to-June movement by product mix and units per order. Track order count and revenue per order together.</li><li><strong>Review revenue concentration.</strong> Monitor Bikes performance and stock availability. If testing accessory bundles, evaluate incremental profit and attachment rate.</li><li><strong>Investigate helmet returns.</strong> Review temporal and geographic patterns, then collect return reasons. Assess financial materiality before choosing an intervention.</li><li><strong>Compare markets beyond volume.</strong> Add revenue per order and product contribution to the geographic view before discussing budget changes.</li><li><strong>Validate customer opportunities.</strong> Analyse repeat purchases and concentration before proposing a retention campaign.</li></ol>
-<p class="small">These are proposed investigations. No intervention, conversion improvement, revenue uplift, or cost saving was measured in this project.</p>
-</section>
-<section class="chapter" id="learning"><p class="eyebrow">09 / My learning journey</p><h2>Building the report changed how I questioned the data.</h2>
-<p>This project extended my Power BI skills from preparation to modelling, DAX, and interactive design. The PBIX contains 44 measures, 12 calculated columns, and three calculated tables. I organised 42 measures in a dedicated Measure Table to keep the calculations easier to find.</p>
-<p>The analytical lesson was just as valuable: a growing KPI can conceal a different movement elsewhere. I learned to check the denominator, understand what a measure counts, and explain what I would need to investigate before acting.</p>
-<details><summary>Read my step-by-step learning journals</summary><ul><li><a href="documents/adventureworks/AdventureWorks-01-Connecting-and-Shaping-Data-English.pdf">01 / Connecting and Shaping the Data (PDF)</a></li><li><a href="documents/adventureworks/AdventureWorks-02-Data-Modelling-English.pdf">02 / Data Modelling (PDF)</a></li><li><a href="documents/adventureworks/AdventureWorks-03-Learning-DAX-English.pdf">03 / Learning DAX (PDF)</a></li></ul></details>
-<div class="tags"><span>Power Query</span><span>Power BI</span><span>DAX</span><span>Data Modelling</span><span>KPI Interpretation</span><span>Business Storytelling</span></div>
-</section>
-<section class="chapter" id="limits"><p class="eyebrow">10 / Sources and limitations</p><h2>Patterns to investigate, with assumptions made visible.</h2>
-<p class="small">Sources: the uploaded Maven Analytics AdventureWorks CSVs, saved PBIX expressions, and original dashboard screenshots. Quantitative observations were independently checked against the supplied sources. Monetary values use the dataset's dollar-denominated presentation; no currency conversion was performed.</p>
-<p class="small">Revenue uses quantity multiplied by product lookup price; product profit subtracts product lookup costs and does not represent net income. Returns are aggregated separately from sales. Customer source keys include repeats and an empty value, which require reconciliation with the final query. This is not a complete audit of every model property, transformation, or interaction.</p>
-<p class="small">The report was built through a guided Maven Analytics course. The accompanying interpretation documents my learning; it is not a client engagement or a claim of independent dashboard innovation. All visual evidence on this page uses my supplied dashboard screenshots, not newly generated charts.</p>
-<a class="button" href="https://github.com/iffaaulia/adventureworks-powerbi-analysis">Explore the full project ↗</a>
-</section></div>
-</main><footer class="wrap"><div class="footer">© 2026 Iffa Aulia Hakim · <a href="index.html#projects">← Back to all projects</a></div></footer>
-</body></html>
+  <a class="skip" href="#story">Skip to the story</a>
+
+  <header class="wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html">Iffa Aulia Hakim</a>
+
+      <div class="links">
+        <a href="index.html#projects">All projects</a>
+        <a href="https://github.com/iffaaulia/adventureworks-powerbi-analysis">
+          GitHub ↗
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap" id="story">
+    <a class="back" href="index.html#projects">← Back to portfolio</a>
+
+    <header class="hero">
+      <p class="eyebrow">Business performance / Project 02</p>
+
+      <h1>When more revenue isn't the whole story.</h1>
+
+      <p class="lede">
+        Revenue rose. Orders fell. I used Power BI to explore what sat
+        behind the headline, then looked at products, returns, markets,
+        and customers to identify the next questions a business could
+        investigate.
+      </p>
+
+      <div class="meta">
+        <div>
+          <strong>Role</strong>
+          Data preparation, modelling &amp; analysis
+        </div>
+
+        <div>
+          <strong>Data</strong>
+          56,046 sales records · Jan 2020–Jun 2022
+        </div>
+
+        <div>
+          <strong>Tools</strong>
+          Power Query · Power BI · DAX
+        </div>
+      </div>
+
+      <p class="small">
+        A guided Maven Analytics course project and my second business
+        analysis portfolio entry. Recommendations are proposals; no
+        business change or financial impact was measured.
+      </p>
+
+      <a class="button" href="#revenue">Explore the findings ↓</a>
+
+      <a class="button secondary" href="#walkthrough-video">
+        Watch dashboard video ↓
+      </a>
+
+      <a
+        class="button secondary"
+        href="https://github.com/iffaaulia/adventureworks-powerbi-analysis"
+      >
+        Project on GitHub ↗
+      </a>
+    </header>
+
+    <figure>
+      <a
+        href="images/adventureworks/exec-dashboard.png"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          src="images/adventureworks/exec-dashboard.png"
+          alt="AdventureWorks executive dashboard with revenue, profit, orders, return rate, category orders and product metrics"
+          width="1173"
+          height="661"
+        >
+      </a>
+
+      <figcaption>
+        <strong>
+          A business summary is a starting point, not the explanation.
+        </strong>
+        Original report screenshot. The visible revenue tooltip is part
+        of the captured report state. Click any dashboard image to view
+        it full size.
+      </figcaption>
+    </figure>
+
+    <div class="story">
+      <nav class="toc" aria-label="Inside this story">
+        <p class="eyebrow">Inside this story</p>
+
+        <div>
+          <a href="#questions">01 / Questions</a>
+          <a href="#revenue">02 / Revenue</a>
+          <a href="#mix">03 / Product mix</a>
+          <a href="#returns">04 / Returns</a>
+          <a href="#markets">05 / Markets</a>
+          <a href="#customers">06 / Customers</a>
+          <a href="#product">07 / Product exploration</a>
+          <a href="#walkthrough-video">Video walkthrough</a>
+          <a href="#recommendations">08 / Recommendations</a>
+          <a href="#learning">09 / Learning</a>
+          <a href="#limits">10 / Sources</a>
+        </div>
+      </nav>
+
+      <section class="chapter" id="questions">
+        <p class="eyebrow">01 / Business questions</p>
+        <h2>From healthcare patterns to business performance.</h2>
+
+        <p>
+          My first portfolio project explored missed medical appointments.
+          For this second project, I wanted to build my Power BI skills
+          while learning how to interpret commercial data: not just
+          whether a number increased, but what else I needed to know
+          before recommending an action.
+        </p>
+
+        <p>
+          I started with ten core CSVs, combined three years of sales,
+          and prepared lookup and returns data in Power Query. I then
+          connected two fact tables with six dimensions and built an
+          interactive report with executive, map, product, and customer
+          pages.
+        </p>
+
+        <ul>
+          <li>Was revenue growth accompanied by more orders?</li>
+          <li>
+            Did the most frequently purchased category also drive revenue?
+          </li>
+          <li>Which products deserved a closer look at returns?</li>
+          <li>
+            Did countries with more orders also generate more value?
+          </li>
+          <li>
+            What could customer and product views tell me—and what could
+            they not establish?
+          </li>
+        </ul>
+
+        <div class="stats">
+          <div>
+            <strong>$24.91M</strong>
+            <span>Revenue</span>
+          </div>
+
+          <div>
+            <strong>$10.46M</strong>
+            <span>Product profit</span>
+          </div>
+
+          <div>
+            <strong>25,164</strong>
+            <span>Distinct orders</span>
+          </div>
+
+          <div>
+            <strong>17,416</strong>
+            <span>Purchasing customers</span>
+          </div>
+
+          <div>
+            <strong>2.17%</strong>
+            <span>Unit return ratio</span>
+          </div>
+
+          <div>
+            <strong>56,046</strong>
+            <span>Sales line records</span>
+          </div>
+        </div>
+
+        <p class="small">
+          Source-data totals for the supplied dataset. Product profit is
+          revenue less product cost, not net income. The unit return
+          ratio is aggregate returned units divided by sold units.
+        </p>
+      </section>
+
+      <section class="chapter" id="revenue">
+        <p class="eyebrow">02 / Revenue and order volume</p>
+        <h2>More revenue did not mean more orders.</h2>
+
+        <p>
+          In June 2022, revenue reached <strong>$1.827M</strong>, up
+          <strong>3.31%</strong> from May. Yet distinct orders fell from
+          <strong>2,165 to 2,146</strong>, a decline of
+          <strong>0.88%</strong>.
+        </p>
+
+        <p>
+          Looking at those metrics together led me to revenue per order.
+          It increased from
+          <strong>$816.83 to $851.35 (+4.23%)</strong>. The headline
+          growth was accompanied by higher average order value, rather
+          than higher order volume.
+        </p>
+
+        <div class="takeaway">
+          <strong>The next business question</strong>
+          <p>
+            Was the increase associated with a shift towards more
+            expensive products, more units per basket, or another change?
+            I would break the difference down by product and quantity
+            before recommending a pricing or acquisition action.
+          </p>
+        </div>
+
+        <p class="small">
+          June versus May 2022. Figures calculated from the supplied
+          sales quantities and product lookup prices. They show an
+          observed pattern, not its cause.
+        </p>
+      </section>
+
+      <section class="chapter" id="mix">
+        <p class="eyebrow">03 / Product contribution</p>
+        <h2>The busiest category was not the revenue engine.</h2>
+
+        <p>
+          Accessories appeared in <strong>16,983 orders</strong>, more
+          than Bikes at <strong>13,929</strong>. If I looked only at
+          order counts, Accessories would appear to lead. But Bikes
+          generated <strong>$23.64M—94.89% of revenue</strong>.
+        </p>
+
+        <p>
+          This changed how I read the category chart. Order popularity
+          and revenue contribution answer different questions. The
+          business was highly dependent on Bikes for revenue, while
+          Accessories appeared in many baskets.
+        </p>
+
+        <div class="takeaway">
+          <strong>Recommendation to investigate</strong>
+          <p>
+            Monitor Bikes performance and availability closely. Explore
+            relevant accessory bundles with bike purchases, measuring
+            attachment rate and incremental profit rather than assuming
+            that more bundled items will improve results.
+          </p>
+        </div>
+
+        <p class="small">
+          Full sales period. Category counts overlap because a single
+          order can contain products from several categories; they
+          should not be summed as unique total orders.
+        </p>
+      </section>
+
+      <section class="chapter" id="returns">
+        <p class="eyebrow">04 / Product returns</p>
+        <h2>A higher return ratio is a signal to investigate.</h2>
+
+        <p>
+          The overall unit return ratio was <strong>2.17%</strong>.
+          Two visible products stood above it:
+          <strong>Sport-100 Helmet, Red at 3.33%</strong> and
+          <strong>Blue at 3.31%</strong>.
+        </p>
+
+        <div class="table-scroll">
+          <table>
+            <caption class="small">
+              Returned units compared with sold units across the
+              supplied data.
+            </caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Units sold</th>
+                <th scope="col">Units returned</th>
+                <th scope="col">Ratio</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Sport-100 Helmet, Red</td>
+                <td>2,099</td>
+                <td>70</td>
+                <td>3.33%</td>
+              </tr>
+
+              <tr>
+                <td>Sport-100 Helmet, Blue</td>
+                <td>1,995</td>
+                <td>66</td>
+                <td>3.31%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          I would prioritise a review of their patterns by period and
+          territory, then seek return reasons or quality records. The
+          current dataset cannot tell me whether fit, product condition,
+          customer expectations, or another factor explains the difference.
+        </p>
+
+        <div class="takeaway">
+          <strong>Keep the metric definition visible</strong>
+          <p>
+            The report's <code>Return Rate</code> divides returned units
+            by sold units. <code>Total Returns</code> counts return
+            records. These are different measures, and mixing them
+            would change the interpretation.
+          </p>
+        </div>
+
+        <p class="small">
+          Returns are not linked to original orders or purchase cohorts.
+          These aggregate ratios are not an individual customer's
+          probability of returning an item.
+        </p>
+      </section>
+    </div>
+
+    <figure>
+      <a
+        href="images/adventureworks/map.png"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          src="images/adventureworks/map.png"
+          alt="AdventureWorks map showing order distribution across countries with a continent selector"
+          loading="lazy"
+        >
+      </a>
+
+      <figcaption>
+        <strong>
+          Where orders happen—and what order volume leaves out.
+        </strong>
+        The original geographic report encodes total orders, not revenue
+        or profitability.
+      </figcaption>
+    </figure>
+
+    <div class="story">
+      <section class="chapter" id="markets">
+        <p class="eyebrow">05 / Geographic performance</p>
+        <h2>Fewer orders could still contribute similar revenue.</h2>
+
+        <p>
+          The United States led with <strong>8,700 orders</strong> and
+          approximately <strong>$7.94M revenue</strong>. Australia
+          recorded <strong>6,060 orders</strong> yet generated
+          approximately <strong>$7.42M</strong>.
+        </p>
+
+        <p>
+          Australia therefore contributed similar revenue with fewer
+          orders across the full dataset. The map alone would not show
+          that difference in order value.
+        </p>
+
+        <div class="takeaway">
+          <strong>Recommendation to investigate</strong>
+          <p>
+            Compare revenue per order, product mix, and product profit
+            alongside geographic volume before allocating market
+            budgets. These data do not establish acquisition costs,
+            market potential, or the returns on additional marketing
+            spend.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <figure>
+      <a
+        href="images/adventureworks/customer-detail.png"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          src="images/adventureworks/customer-detail.png"
+          alt="Customer detail dashboard showing purchasing customers, revenue per customer, segment order charts and top customers"
+          loading="lazy"
+        >
+      </a>
+
+      <figcaption>
+        <strong>Customer contribution deserves its own view.</strong>
+        The income and occupation charts count orders grouped by
+        customer attributes; they do not show segment profitability.
+      </figcaption>
+    </figure>
+
+    <div class="story">
+      <section class="chapter" id="customers">
+        <p class="eyebrow">06 / Customer contribution</p>
+        <h2>A top-customer list starts a question, not a campaign.</h2>
+
+        <p>
+          The data contains <strong>17,416 purchasing customers</strong>,
+          with approximately <strong>$1.43K revenue per customer</strong>.
+          The report's highest-revenue listed customer contributed
+          <strong>$12,408 across six orders</strong>.
+        </p>
+
+        <p>
+          This view helped me move from total sales to customer
+          contribution. However, a ranking alone does not tell me who
+          is likely to return, whether a customer is profitable, or
+          whether a retention offer would change behaviour.
+        </p>
+
+        <div class="takeaway">
+          <strong>Recommendation to investigate</strong>
+          <p>
+            Examine repeat-purchase behaviour, recency, and revenue
+            concentration before designing a retention programme.
+            Use income and occupation as descriptive context rather
+            than evidence that a particular group should receive
+            an offer.
+          </p>
+        </div>
+
+        <p class="small">
+          Customer-level return attribution is not available:
+          Returns Data has no CustomerKey or original order identifier.
+        </p>
+      </section>
+    </div>
+
+    <figure>
+      <a
+        href="images/adventureworks/product-detail.png"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          src="images/adventureworks/product-detail.png"
+          alt="Product detail dashboard with three target gauges, price adjustment slider, profit comparison and selectable product metric"
+          loading="lazy"
+        >
+      </a>
+
+      <figcaption>
+        <strong>One page, several ways to investigate a product.</strong>
+        Original report state for a selected product. Target gauges
+        and a price scenario support exploration; they are not evidence
+        of a tested pricing decision.
+      </figcaption>
+    </figure>
+
+    <div class="story">
+      <section class="chapter" id="product">
+        <p class="eyebrow">07 / Interactive product exploration</p>
+        <h2>Less visual clutter. More useful questions.</h2>
+
+        <p>
+          I learned to use <strong>gauge charts</strong> to compare
+          monthly orders, revenue, and profit with targets. In this
+          project, targets are set at 110% of previous-month performance.
+          They provide a consistent benchmark, rather than a target
+          agreed with a real stakeholder.
+        </p>
+
+        <p>
+          A <strong>field parameter</strong> lets the bottom chart
+          switch between orders, revenue, profit, returns, and return
+          rate. Instead of adding five separate charts, I gave the
+          user a way to choose the question.
+        </p>
+
+        <p>
+          A <strong>numeric range parameter</strong> supplies a
+          price-adjustment input for comparing baseline and adjusted
+          profit. This is a calculation scenario: it retains observed
+          quantities and existing costs. A higher scenario profit
+          does not demonstrate that customers would continue buying
+          at the new price.
+        </p>
+
+        <p>
+          Navigation, contextual tooltips, and customer metric selection
+          helped me practise making a report easier to explore. These
+          are report-design features; they do not replace the evidence
+          needed for a business decision.
+        </p>
+      </section>
+
+      <!-- Dashboard video -->
+      <section
+        class="chapter"
+        id="walkthrough-video"
+        aria-labelledby="video-title"
+      >
+        <p class="eyebrow">Dashboard walkthrough</p>
+        <h2 id="video-title">See the report in action.</h2>
+
+        <p id="video-description">
+          Watch a recorded demonstration of the report's navigation,
+          filters, metric selection, and price-adjustment scenario.
+          Select Play to start.
+        </p>
+
+        <div class="video-frame">
+          <video
+            id="dashboard-video"
+            controls
+            playsinline
+            preload="metadata"
+            poster="/images/adventureworks/exec-dashboard.png"
+            aria-label="AdventureWorks dashboard walkthrough"
+            aria-describedby="video-description"
+          >
+            <source
+              id="dashboard-video-source"
+              src="/videos/adventureworks-walkthrough.mp4"
+              type="video/mp4"
+            >
+
+            Your browser does not support embedded video.
+            <a href="/videos/adventureworks-walkthrough.mp4">
+              Open the MP4 directly.
+            </a>
+          </video>
+        </div>
+
+        <p
+          id="video-error"
+          class="video-error"
+          role="status"
+          hidden
+        >
+          The embedded video could not be loaded. Try opening the MP4
+          directly using the link below.
+        </p>
+
+        <p class="small">
+          This is a recorded walkthrough. The video shows the
+          interactions, but it does not allow you to filter the report.
+        </p>
+
+        <p class="video-help">
+          <a
+            href="/videos/adventureworks-walkthrough.mp4"
+            target="_blank"
+            rel="noopener"
+          >
+            Open the MP4 directly ↗
+          </a>
+        </p>
+      </section>
+
+      <section class="chapter" id="recommendations">
+        <p class="eyebrow">08 / Recommendations</p>
+        <h2>Turn a pattern into a measurable next step.</h2>
+
+        <ol>
+          <li>
+            <strong>Explain the change in order value.</strong>
+            Decompose the May-to-June movement by product mix and
+            units per order. Track order count and revenue per order
+            together.
+          </li>
+
+          <li>
+            <strong>Review revenue concentration.</strong>
+            Monitor Bikes performance and stock availability. If
+            testing accessory bundles, evaluate incremental profit
+            and attachment rate.
+          </li>
+
+          <li>
+            <strong>Investigate helmet returns.</strong>
+            Review temporal and geographic patterns, then collect
+            return reasons. Assess financial materiality before
+            choosing an intervention.
+          </li>
+
+          <li>
+            <strong>Compare markets beyond volume.</strong>
+            Add revenue per order and product contribution to the
+            geographic view before discussing budget changes.
+          </li>
+
+          <li>
+            <strong>Validate customer opportunities.</strong>
+            Analyse repeat purchases and concentration before
+            proposing a retention campaign.
+          </li>
+        </ol>
+
+        <p class="small">
+          These are proposed investigations. No intervention, conversion
+          improvement, revenue uplift, or cost saving was measured
+          in this project.
+        </p>
+      </section>
+
+      <section class="chapter" id="learning">
+        <p class="eyebrow">09 / My learning journey</p>
+        <h2>Building the report changed how I questioned the data.</h2>
+
+        <p>
+          This project extended my Power BI skills from preparation to
+          modelling, DAX, and interactive design. The PBIX contains
+          44 measures, 12 calculated columns, and three calculated
+          tables. I organised 42 measures in a dedicated Measure Table
+          to keep the calculations easier to find.
+        </p>
+
+        <p>
+          The analytical lesson was just as valuable: a growing KPI
+          can conceal a different movement elsewhere. I learned to
+          check the denominator, understand what a measure counts,
+          and explain what I would need to investigate before acting.
+        </p>
+
+        <details>
+          <summary>Read my step-by-step learning journals</summary>
+
+          <ul>
+            <li>
+              <a
+                href="documents/adventureworks/AdventureWorks-01-Connecting-and-Shaping-Data-English.pdf"
+              >
+                01 / Connecting and Shaping the Data (PDF)
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="documents/adventureworks/AdventureWorks-02-Data-Modelling-English.pdf"
+              >
+                02 / Data Modelling (PDF)
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="documents/adventureworks/AdventureWorks-03-Learning-DAX-English.pdf"
+              >
+                03 / Learning DAX (PDF)
+              </a>
+            </li>
+          </ul>
+        </details>
+
+        <div class="tags">
+          <span>Power Query</span>
+          <span>Power BI</span>
+          <span>DAX</span>
+          <span>Data Modelling</span>
+          <span>KPI Interpretation</span>
+          <span>Business Storytelling</span>
+        </div>
+      </section>
+
+      <section class="chapter" id="limits">
+        <p class="eyebrow">10 / Sources and limitations</p>
+        <h2>Patterns to investigate, with assumptions made visible.</h2>
+
+        <p class="small">
+          Sources: the uploaded Maven Analytics AdventureWorks CSVs,
+          saved PBIX expressions, and original dashboard screenshots.
+          Quantitative observations were independently checked against
+          the supplied sources. Monetary values use the dataset's
+          dollar-denominated presentation; no currency conversion
+          was performed.
+        </p>
+
+        <p class="small">
+          Revenue uses quantity multiplied by product lookup price;
+          product profit subtracts product lookup costs and does not
+          represent net income. Returns are aggregated separately
+          from sales. Customer source keys include repeats and an
+          empty value, which require reconciliation with the final
+          query. This is not a complete audit of every model property,
+          transformation, or interaction.
+        </p>
+
+        <p class="small">
+          The report was built through a guided Maven Analytics course.
+          The accompanying interpretation documents my learning; it is
+          not a client engagement or a claim of independent dashboard
+          innovation. All visual evidence on this page uses my supplied
+          dashboard screenshots, not newly generated charts.
+        </p>
+
+        <a
+          class="button"
+          href="https://github.com/iffaaulia/adventureworks-powerbi-analysis"
+        >
+          Explore the full project ↗
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer">
+      © 2026 Iffa Aulia Hakim ·
+      <a href="index.html#projects">← Back to all projects</a>
+    </div>
+  </footer>
+
+  <script>
+    const video = document.getElementById("dashboard-video");
+    const source = document.getElementById("dashboard-video-source");
+    const errorMessage = document.getElementById("video-error");
+
+    function showVideoError() {
+      errorMessage.hidden = false;
+    }
+
+    video.addEventListener("error", showVideoError);
+    source.addEventListener("error", showVideoError);
+
+    video.addEventListener("loadedmetadata", function () {
+      errorMessage.hidden = true;
+    });
+  </script>
+</body>
+</html>
